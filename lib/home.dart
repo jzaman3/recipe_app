@@ -24,25 +24,48 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipes'),
+        title: Text(
+          'Recipes',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.blue,
       ),
       body: ListView.builder(
         itemCount: recipes.length,
         itemBuilder: (context, index) {
-          return ListTile(
-            title: Text(recipes[index]['name']!),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => Details(
-                    recipeName: recipes[index]['name']!,
-                    ingredients: recipes[index]['ingredients']!,
-                    instructions: recipes[index]['instructions']!,
+          return Card(
+            margin: EdgeInsets.all(10),
+            elevation: 5,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            color: Colors.grey[200],
+            child: InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Details(
+                      recipeName: recipes[index]['name']!,
+                      ingredients: recipes[index]['ingredients']!,
+                      instructions: recipes[index]['instructions']!,
+                    ),
+                  ),
+                );
+              },
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  recipes[index]['name']!,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.blue,
                   ),
                 ),
-              );
-            },
+              ),
+            ),
           );
         },
       ),
