@@ -1,5 +1,7 @@
+// lib/main.dart
 import 'package:flutter/material.dart';
-import 'home_screen.dart';
+import 'home.dart'; // Import the HomeScreen
+
 void main() {
   runApp(RecipeBookApp());
 }
@@ -12,7 +14,7 @@ class RecipeBookApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: Home(),
     );
   }
 }

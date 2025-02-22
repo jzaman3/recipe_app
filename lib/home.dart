@@ -10,7 +10,7 @@ class Home extends StatelessWidget {
       'instructions': '1. Pour a 1:1 ratio of milk and water in a pot.\n2. Bring to a simmer.'
           '\n3. Add 2-3 cardamom, 2-3 bay leaves, 1 stick cinnamon, and a tablespoon of black tea for'
           'every cup of liquid added to the pot.\n4.Boil until the mixture is golden-brown in color'
-          'then you are done.',
+          ' then you are done.',
     },
     {
       'name': 'Spaghetti',
